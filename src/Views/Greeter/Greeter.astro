@@ -1,10 +1,12 @@
 ---
-import DiscordSidebar from "@/components/DiscordSidebar/DiscordSidebar.astro"; 
+import DiscordSidebar from "@/components/DiscordSidebar/DiscordSidebar.astro";
+import styles from "./Greeter.module.css";
 ---
 
 <section
 	class="px-4 sm:px-16 bg-[url('/bg.jpg')] bg-no-repeat bg-cover bg-center bg-fixed bg-blend-multiply bg-gray-700 w-full min-h-screen min-h-screen-100%"
 	transition:animate="slide"
+	style={styles.greeter}
 >
 	<div class="lg:pb-28 lg:py-0 py-50">
 		<div class="flex flex-wrap gap-28 justify-center items-center min-h-screen min-h-screen-100%">
