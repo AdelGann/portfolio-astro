@@ -10,14 +10,17 @@ const projects = await getCollection("projects");
 >
 	<div class="p-10">
 		<hr class="text-gray-600" />
-		<h1 class="text-4xl font-bold pt-4">Notable Projects</h1>
-		<div class="grid gap-10 md:grid-cols-2 pt-7">
+		<div data-aos="fade-right" class="pt-4">
+			<h1 class="text-4xl font-bold">Notable Projects</h1>
+			<p class="font-light text-sm pt-2">Here are some of my notable projects.</p>
+		</div>
+		<div class="grid gap-10 md:grid-cols-2 pt-22">
 			{
-				projects.map((project: { slug: number; data: ProjectInterface }) => {
-					const { slug, data } = project;
+				projects.map((project: { id: string; data: ProjectInterface }) => {
+					const { data } = project;
 					const { title, description, img, technologies, type, link, github } = data;
 					return (
-						<article class="p-3 bg-gray-800 rounded-xl h-[100%]" onclick="">
+						<article class="p-3 bg-gray-800 rounded-xl h-[100%]" onclick="" data-aos="fade-down">
 							<div class="flex gap-4 flex-col xl:flex-row items-center">
 								<img
 									src={`/img/${img}`}

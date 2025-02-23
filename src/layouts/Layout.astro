@@ -1,4 +1,5 @@
 ---
+import "aos/dist/aos.css";
 import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
 
@@ -21,9 +22,13 @@ const { title, description } = Astro.props;
 		<ClientRouter />
 	</head>
 	<body>
-		<div>
+		<div data-aos="fade-in" data-aos-duration="600">
 			<slot />
 		</div>
+		<script>
+			import AOS from "aos";
+			AOS.init();
+		</script>
 	</body>
 </html>
 
