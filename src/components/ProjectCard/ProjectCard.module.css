@@ -1,0 +1,14 @@
+@keyframes slide-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(5vh);
+	}
+}
+@media (prefers-reduce-motion: no-preference) {
+	.card {
+		view-timeline-name: --item-timeline;
+		animation: slide-fade-in both;
+		animation-timeline: --item-timeline;
+		animation-range: contain 0% contain 50%;
+	}
+}
