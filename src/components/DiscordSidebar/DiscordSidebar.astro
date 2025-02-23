@@ -1,0 +1,84 @@
+---
+import { Clock } from "../Clock/Clock";
+
+const roles = [
+	{ color: "#1f70db", name: "Reactjs" },
+	{ color: "#db641f", name: "Astrojs" },
+	{ color: "#db1f64", name: "NestJs" },
+	{ color: "#7f21c2", name: "Postgresql" },
+	{ color: "#1f70db", name: "Typescript" },
+	{ color: "#db641f", name: "Java" },
+	{ color: "#1f70db", name: "Python" },
+];
+---
+
+<aside>
+	<div class="land rounded-t-2xl p-5"></div>
+	<div class="content rounded-b-2xl p-5">
+		<div class="absolute rounded-full w-32 h-36">
+			<img
+				src="./profile/profile.jpeg"
+				alt="a handsome dev"
+				class="rounded-full w-28 h-28 relative bottom-20"
+			/>
+		</div>
+		<div class="p-2 pt-10">
+			<p class="text-2xl font-bold">Adel Gannem</p>
+			<div class="flex">
+				<p class="text-lg font-light">adelg.tsx</p>
+				<div class="flex items-center gap-5 ml-2 bg-[#232528] rounded-xl p-1">
+					<img src="./dev.badge.png" alt="dev badge" class="w-5 h-5" />
+				</div>
+			</div>
+			<div class="flex flex-col gap-2 pt-2">
+				<p class="flex justify-center items-center">⇆ &nbsp; ◁ &nbsp; ❚❚ &nbsp; ▷ &nbsp; ↻</p>
+				<p class="prose prose-invert font-semibold">FullStack developer <br /></p>
+				<p class="text-gray-500 py-2">View Full Bio</p>
+			</div>
+		</div>
+		<div class="block rounded-sm">
+			<h3 class="font-bold text-sm">Playing</h3>
+			<div class="flex p-2 pt-4 gap-7">
+				<div class="bg-gray-900 p-4 rounded-xl">
+					<img src="./astro.png" alt="" class="w-16 h-16" />
+				</div>
+				<div class="flex gap-1 flex-col">
+					<h3 class="text-2sm font-semibold">Visual Studio Code</h3>
+					<h3 class="text-sm font-semibold">Editing index.astro</h3>
+					<div class="flex gap-1">
+						<img src="./discord/joystick.png" alt="" class="w-5 h-5" />
+						<Clock client:load />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-wrap gap-1 pt-3">
+			{
+				roles.map((item, key) => (
+					<div
+						class={`${key} bg-[#2d2f33] p-1 font-semibold text-[12px] rounded-sm flex items-center gap-1`}
+					>
+						<div class="rounded-full w-2 h-2" style={`background-color: ${item.color};`} />
+						<span class="">{item.name.toUpperCase()}</span>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</aside>
+
+<style>
+	.land {
+		background: #232428;
+		width: 450px;
+		height: 140px;
+	}
+	.content {
+		background: #111214;
+		width: 450px;
+	}
+	.block {
+		background: #232528;
+		padding: 10px;
+	}
+</style>
