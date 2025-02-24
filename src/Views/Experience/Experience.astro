@@ -7,40 +7,41 @@ const experience = await getCollection("experience");
 
 <section class="bg-white min-h-screen rounded-b-4xl">
 	<div class="p-10">
-		<hr class="text-black" data-aos="fade-down"/>
-		<div data-aos="fade-left" class="pt-4 text-black">
+		<hr class="text-black" data-aos="fade-down" />
+		<div data-aos="fade-right" class="pt-4 text-black">
 			<h1 class="text-4xl font-bold">Experience Timeline</h1>
 			<p class="font-light text-sm pt-2">Here are some of my notable projects.</p>
 		</div>
-		<div class="p-5 m-5" data-aos="fade-left">
+		<div class="p-5 m-5 shadow-2xl rounded-2xl" data-aos="fade-right">
 			{
 				experience.map((experience: { id: string; data: ExperienceInterface }) => {
 					const { data } = experience;
 					const { title, description, duration, img, technologies, type } = data;
 					return (
-						<article class="text-black">
-							<div class="flex gap-2 ">
-								<div class="flex gap-5 flex-col lg:flex-row">
-									<div>
-										<img src={`/img/${img}`} alt={title} />
+						<article class="text-black mb-8">
+							<div class="flex flex-col lg:flex-row gap-5">
+								<div class="flex-shrink-0 p-2">
+									<img
+										class="w-full sm:w-32 h-auto object-cover"
+										src={`/img/${img}`}
+										alt={title}
+									/>
+								</div>
+								<div class="flex flex-col gap-3 prose">
+									<div class="pb-3">
+										<h5 class="text-xl font-bold">
+											{title} - <span class="text-sm font-normal">{duration}</span>
+										</h5>
+										<p class="text-sm font-semibold">{type}</p>
+										<p class="text-sm font-semibold">{technologies}</p>
 									</div>
-									<div class="flex flex-col gap-3 prose ">
-										<div class="pb-3">
-											<h5 class="text-xl font-bold">
-												{title} - <span class="text-sm font-normal">{duration}</span>
-											</h5>
-											<p class="text-sm font-semibold">{type}</p>
-											<p class="text-sm font-semibold">{technologies}</p>
-										</div>
-										<ol>
-											{description.map((item) => (
-												<li class="max-w-[450px] prose text-justify font-regular p-2 text-sm">
-													● {item}
-												</li>
-											))}
-										</ol>
-										<p />
-									</div>
+									<ol class="list-disc pl-5">
+										{description.map((item) => (
+											<li class="max-w-[700px] prose text-justify font-regular p-2 text-sm">
+												{item}
+											</li>
+										))}
+									</ol>
 								</div>
 							</div>
 						</article>
