@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import type { ProjectInterface } from "@/content/content.config";
+import type { ProjectInterface } from "@/content/projects.config";
 
 const projects = await getCollection("projects");
 ---
@@ -9,7 +9,7 @@ const projects = await getCollection("projects");
 	class="px-4 sm:px-16 bg-[url('/gridbg.jpg')] bg-no-repeat bg-cover bg-center bg-blend-multiply bg-gray-700 w-full min-h-screen min-h-screen-100%"
 >
 	<div class="p-10">
-		<hr class="text-gray-600" />
+		<hr class="text-gray-600" data-aos="fade-down" />
 		<div data-aos="fade-right" class="pt-4">
 			<h1 class="text-4xl font-bold">Notable Projects</h1>
 			<p class="font-light text-sm pt-2">Here are some of my notable projects.</p>
@@ -36,7 +36,7 @@ const projects = await getCollection("projects");
 									<p class="text-sm font-light">{technologies}</p>
 									<div class="pt-2 flex gap-2">
 										<a href={github} title="repository" target="_blank" rel="noopener noreferrer">
-											<img src="./github.png" alt="repository" class="w-5 h-5" />
+											<img src="./github.png" alt="repository" class="w-7 h-7" />
 										</a>
 										{link && (
 											<a
@@ -45,7 +45,7 @@ const projects = await getCollection("projects");
 												target="_blank"
 												rel="noopener noreferrer"
 											>
-												<img src="./windows.png" alt="repository" class="w-5 h-5" />
+												<img src="./windows.png" alt="repository" class="w-7 h-7" />
 											</a>
 										)}
 									</div>

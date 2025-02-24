@@ -1,26 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { experience } from "./experience.config";
+import { projects } from "./projects.config";
 
-const projectSchema = z.object({
-	title: z.string(),
-	description: z.string(),
-	img: z.string().url(),
-	type: z.string(),
-	technologies: z.string(),
-	link: z.string().url(),
-	github: z.string().url(),
-});
-export interface ProjectInterface {
-	title: string;
-	description: string;
-	img: string;
-	type: string;
-	github: string
-	link: string
-	technologies: string;
-}
-
-const projects = defineCollection({
-	schema: projectSchema,
-});
-
-export const collections = { projects };
+export const collections = { projects, experience };
